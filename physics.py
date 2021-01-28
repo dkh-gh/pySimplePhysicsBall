@@ -2,6 +2,14 @@
 from tkinter import *
 from time import *
 
+# ВЫБОР ОС (1 - WINDOWS, 0 - LINUX)
+OS = 0
+
+keysCodes = [
+  [113, 114, 111],
+  [37, 39, 38]
+]
+
 win = Tk()
 
 xA = 0
@@ -11,9 +19,9 @@ x = 100
 y = 100
 
 keyUp = keyLeft = keyRight = False
-keyUpCode = 111
-keyLeftCode = 113
-keyRightCode = 114
+keyUpCode = keysCodes[OS][2]
+keyLeftCode = keysCodes[OS][0]
+keyRightCode = keysCodes[OS][1]
 
 def keyPress(event):
    global keyUp, keyLeft, keyRight, keyUpCode, keyLeftCode, keyRightCode
